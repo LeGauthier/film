@@ -1,0 +1,10 @@
+#content{
+	margin : auto;
+	width : 80%;
+	border : solid 2px black;
+}
+
+
+h1,h2 {
+	text-align : center;
+}
