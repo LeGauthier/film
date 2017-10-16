@@ -18,12 +18,12 @@ function test(){
    alert("msg : "+msg);
 
 $.ajax({
-    headers: {"Authorization": "Basic YXBpOmtleS0xM2FiNmVlOWQxNWZlYzA0MDlmYWMwOGRjMjU1ZjAzZA=="},
+    headers: {"Authorization": "Basic [clé]=="},
     // url: "././mail/contact_me.php",
-    url: "https://api.mailgun.net/v3/sandboxc8536e7f8678491eb1c4285608d3e7a8.mailgun.org/messages",
+    url: "https://api.mailgun.net/v3/[url_Sandbox.mailgun.org]/messages",
     type: "POST",
     data: {
-        "from": "lorianedehu@gmail.com",
+        "from": [adressmail],
         "to": to,
         "text": msg
     },
