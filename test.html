@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recherche</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+  
+
+
+<script>
+function test(){
+   to= document.getElementById("to").value;
+   msg = document.getElementById("msg").value
+   alert("to : "+to);
+   alert("msg : "+msg);
+
+$.ajax({
+    headers: {"Authorization": "Basic YXBpOmtleS0xM2FiNmVlOWQxNWZlYzA0MDlmYWMwOGRjMjU1ZjAzZA=="},
+    // url: "././mail/contact_me.php",
+    url: "https://api.mailgun.net/v3/sandboxc8536e7f8678491eb1c4285608d3e7a8.mailgun.org/messages",
+    type: "POST",
+    data: {
+        "from": "lorianedehu@gmail.com",
+        "to": to,
+        "text": msg
+    },
+    // cache: false,
+    success: function(res) {
+        alert('ok');console.log(res);
+    },
+    error: function() {
+        alert('problems');console.log(res);
+    }
+});
+}
+</script>
+
+
+  <form method="get">
+
+  <input type="text" id="to" placeholder="TO :" required>
+  <textarea id="msg" placeholder="Message :" required></textarea>
+  <input type="button" onclick="test()" value="Envoyer">
+  </body>
+</html>
