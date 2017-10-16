@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recherche</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+  
+
+
+<script>
+function test(){
+   ville = document.getElementById("ville").value;
+$.ajax({
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address='+ville+'&key=<KEY>',
+    success: function(res) {
+        actualiser_infos_ville(res.results[0].address_components[2].long_name, res.results[0].geometry.location.lat, res.results[0].geometry.location.lng);
+          console.log(res);
+    },
+    error: function(res) {
+        alert('problems');
+        console.log(res);
+    }
+});
+}
+
+
+function actualiser_infos_ville(ville_reg, ville_lat, ville_lng)
+{
+  document.getElementById('xid').innerHTML = 'X = '+ville_lng;
+  document.getElementById('yid').innerHTML = 'Y = '+ville_lat;
+  document.getElementById('reg').innerHTML = 'Région = '+ville_reg;
+}
+
+</script>
+
+
+  <form>
+
+  <input type="text" id="ville" placeholder="ville :" required>
+  <input type="button" onclick="test()" value="Envoyer">
+  <div>
+      <p id="xid">X = </p>
+      <p id="yid">Y = </p>
+      <p id="reg">Région = </p>
+  </div>
+  </body>
+</html>
