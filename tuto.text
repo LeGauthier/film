@@ -1,0 +1,11 @@
+obtenir les droits:
+chmod 400 FILM.pem
+
+connection:
+ssh -i "FILM.pem" ubuntu@ec2-18-221-155-165.us-east-2.compute.amazonaws.com
+
+IP:
+18.221.155.165
+
+IPv4:
+ec2-18-221-155-165.us-east-2.compute.amazonaws.com
