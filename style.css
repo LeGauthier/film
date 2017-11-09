@@ -31,7 +31,6 @@ h1 {
 .form-row select:focus, .form-row input:focus{
 	border-color : black;
 	box-shadow: 0 0 0 .2rem rgba(76, 175, 80, .35);
-4C AF 50
 }
 
 #result table{
@@ -57,7 +56,7 @@ body {
 	margin-bottom: 20px;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1200px){
 	table {
 		width: 100%;
 		margin:0px;
@@ -77,5 +76,22 @@ body {
 	body {
 		font-size: 1.9em;
 	}
-	
+
+	.form-row {
+		width : 100%;
+	}
+
+	.form-row div{
+		display : block !important;
+		width : 100% !important;
+	}
+	.form-row input, .form-row select, .form-row button {
+		width : 100% !important;
+		height : auto;
+		font-size: 1em;
+	}
+	.form-row .col-5 {
+		max-width : 100%;
+		flex-basis: 100%;
+	}
 }
