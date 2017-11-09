@@ -54,7 +54,7 @@ function affichage_resultat(tab_resultat)
 	alert(tab_resultat[0]);
 	table = '';
 	for (i=0; i < size; i++){
-		table += '<tr><td><a href="page_description/description.html?numero='+tab_resultat[i].id+'">'+tab_resultat[i].original_title+'</a></td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview.substring(0, 150)+'...</td></tr>'
+		table += '<tr scope="row"><td><a href="page_description/description.html?numero='+tab_resultat[i].id+'">'+tab_resultat[i].original_title+'</a></td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview.substring(0, 150)+'[...]</td></tr>';
 	}
 	document.getElementById('tbody').innerHTML = table;
 }
@@ -111,13 +111,13 @@ function getParameterByName(name, url) {
 
 
 <div id="res">
-<table class="table table-striped">
-	<thead>
+<table class="table table-responsive">
+	<thead class="thead-light">
 		<tr>
-			<th>Titre</th>
-			<th>Catégorie</th>
-			<th>Année</th>
-			<th>Description</th>
+			<th scope="col">Titre</th>
+			<th scope="col">Catégorie</th>
+			<th scope="col">Année</th>
+			<th scope="col">Description</th>
 		</tr>
 	</thead>
 	<tbody id='tbody'>
