@@ -4,6 +4,7 @@ h1{
 }
 
 #carousel {
+    display: block;
     margin: auto;
     width:960px;
     border:1px solid #ffffff;
