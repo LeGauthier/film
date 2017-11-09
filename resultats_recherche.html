@@ -17,15 +17,20 @@
 <!--//////////AUTRE TEST ////////////////// 
 -->
 <script>
-
+/*
+test à appeler à chaque actualisation de la page + a chaque recherhce
+*/
 function test(){
-	alert('hey');
-	title = getParameterByName('nomfilm');
-	alert(title);
-	if (!title) {
-		title = document.getElementById('title').value;
+	title = document.getElementById('title').value;
+
+	if (title) {
 		title = title.replace(' ', '+');
+	} else {
+		title = getParameterByName('nomfilm');
 	}
+	
+	alert(title);
+	
 	//recherche par titre
 	$.ajax({
 		url: 'https://api.themoviedb.org/3/search/movie?api_key=f774f8141b6f19c0d40cca605a071a08&query='+title,
@@ -45,7 +50,7 @@ function test(){
 function affichage_resultat(tab_resultat)
 {
 	var size = tab_resultat.length;
-	alert(size);
+	alert(tab_resultat);
 	table = '';
 	for (i=0; i < size; i++){
 		table += '<tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr>'
