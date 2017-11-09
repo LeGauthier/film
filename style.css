@@ -57,7 +57,7 @@ body {
 	margin-bottom: 20px;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 1500px){
 	table {
 		width: 100%;
 		margin:0px;
