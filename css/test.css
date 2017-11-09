@@ -3,7 +3,24 @@ h1{
     margin: 40px 0px;
 }
 
+#carousel {
+    margin: auto;
+    width:960px;
+    border:1px solid #ffffff;
+    height:300px;
+    width: 100%;
+    position:relative;
+    clear:both;
+    overflow:hidden;
+    background:#FFF;
+}
+#carousel img {
+  visibility:hidden;
+  cursor:pointer;
+}
+
 .button {
+    margin: auto;
     transition-duration: 0.4s;
     background-color: white;
     color: black;
@@ -27,6 +44,7 @@ h1{
 }
 
 #search input[type="text"] {
+    margin: auto;
     background: url(../img/search.png) no-repeat 5px 1px #fcfcfc;
     background-size: contain;
     border: 1px solid #d1d1d1;
