@@ -17,7 +17,11 @@
 <!--//////////AUTRE TEST ////////////////// 
 -->
 <script>
+
 function test(){
+	alert('hey');
+	test = getParameterByName('nomfilm');
+	alert(test);
 	title = document.getElementById('title').value;
 	title = title.replace(' ', '+');
 	//recherche par titre
@@ -48,10 +52,20 @@ function affichage_resultat(tab_resultat)
 }
 
 
+function getParameterByName(name, url) {
+	if (!url) url = window.location.href;
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 
 </script>
 
-<h1>Ma Cinémathèque</h1>
+<h1>Ma Cinémathèquedsqgq</h1>
 <div id="content">
 <h2>Recherche avancée</h2>
 <div id="test">
