@@ -1,0 +1,29 @@
+#content{
+	margin : auto;
+	width : 80%;
+	border : solid 2px black;
+}
+
+
+h1,h2 {
+	text-align : center;
+	font-family: cursive;
+}
+h1 {
+	font-size: 80px;
+	max-width : 100%;
+}
+
+#res {
+	border : solid 2px black;
+	margin : 20px;
+}
+
+#test {
+	margin : 20px 0px;
+	text-align : center;
+}
+
+.li-item {
+	box-shadow: 5px 5px 5px #000;
+}
