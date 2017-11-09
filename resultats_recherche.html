@@ -22,7 +22,8 @@ test à appeler à chaque actualisation de la page + a chaque recherhce
 */
 function test(){
 	title = document.getElementByName('title').value;
-
+	alert('test');
+	alert(title);
 	if (title) {
 		title = title.replace(' ', '+');
 	} else {
@@ -73,7 +74,7 @@ function getParameterByName(name, url) {
 
 </script>
 
-<h1>Ma Cinémathèquedsqgq</h1>
+<h1>Ma Cinémathèque</h1>
 <div id="content">
 <h2>Recherche avancée</h2>
 <div id="test">
