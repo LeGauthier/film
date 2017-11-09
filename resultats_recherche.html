@@ -22,7 +22,7 @@ test à appeler à chaque actualisation de la page + a chaque recherhce
 */
 function test(){
 	alert('test');
-	title = document.getElementByName('nomfilm').value;
+	title = document.getElementById('nomfilm').value;
 	alert('test');
 	alert(title);
 	if (title) {
@@ -83,7 +83,7 @@ function getParameterByName(name, url) {
 	<div class="form-group">
 	<ul class="nav nav-tabs">
 	<li class="nav-item li-item">
-		<input class="form-control" type="text" placeholder="Titre" name="nomfilm">
+		<input class="form-control" type="text" placeholder="Titre" id="nomfilm">
 	</li>
 
 	<li class="nav-item dropdown li-item">
