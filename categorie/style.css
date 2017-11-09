@@ -3,7 +3,7 @@ h1{
 }
 
 i{
-	 display: none;
+	 display: none!important;
 }
 
 .nav-side-menu {
