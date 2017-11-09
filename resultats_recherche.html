@@ -21,10 +21,8 @@
 test à appeler à chaque actualisation de la page + a chaque recherhce
 */
 function test(){
-	alert('test');
 	title = document.getElementById('nomfilm').value;
-	alert('test');
-	alert(title);
+
 	if (title) {
 		title = title.replace(' ', '+');
 	} else {
@@ -48,7 +46,7 @@ function test(){
 	});
 }
 
-
+// faire le lien vers les pages
 function affichage_resultat(tab_resultat)
 {
 	var size = tab_resultat.length;
@@ -56,7 +54,7 @@ function affichage_resultat(tab_resultat)
 	alert(tab_resultat[0]);
 	table = '';
 	for (i=0; i < size; i++){
-		table += '<tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr>'
+		table += '<a href=\'description.html?numero='+tab_resultat[i].id+'\'><tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr></a>'
 	}
 	document.getElementById('tbody').innerHTML = table;
 }
