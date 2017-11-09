@@ -20,10 +20,12 @@
 
 function test(){
 	alert('hey');
-	test = getParameterByName('nomfilm');
-	alert(test);
-	title = document.getElementById('title').value;
-	title = title.replace(' ', '+');
+	title = getParameterByName('nomfilm');
+	alert(title);
+	if (!title) {
+		title = document.getElementById('title').value;
+		title = title.replace(' ', '+');
+	}
 	//recherche par titre
 	$.ajax({
 		url: 'https://api.themoviedb.org/3/search/movie?api_key=f774f8141b6f19c0d40cca605a071a08&query='+title,
