@@ -1,7 +1,7 @@
 #content{
 	margin : auto;
-	width : 80%;
-	border : solid 2px black;
+	width : 800px;
+	max-width : 100%;
 }
 
 
@@ -12,11 +12,6 @@ h1,h2 {
 h1 {
 	font-size: 80px;
 	max-width : 100%;
-}
-
-#res {
-	border : solid 2px black;
-	margin : 20px;
 }
 
 #test {
