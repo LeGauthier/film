@@ -56,3 +56,22 @@ h1 {
 body {
 	margin-bottom: 20px;
 }
+
+@media screen and (max-width: 480px){
+	table {
+		width: 100%;
+		margin:0px;
+	}
+
+	tr {
+		display: block;
+		height: auto;
+		width:100%;
+	} 
+	
+	td, th {
+		display: block;
+		width: 100%;
+	}
+	
+}
