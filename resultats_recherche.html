@@ -54,7 +54,7 @@ function affichage_resultat(tab_resultat)
 	alert(tab_resultat[0]);
 	table = '';
 	for (i=0; i < size; i++){
-		table += '<a href=\'description.html?numero='+tab_resultat[i].id+'\'><tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr></a>'
+		table += '<a href="description.html?numero='+tab_resultat[i].id+'"> <tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr> </a>'
 	}
 	document.getElementById('tbody').innerHTML = table;
 }
