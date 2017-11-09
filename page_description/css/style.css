@@ -1,0 +1,41 @@
+#principale{
+    display: block;
+    margin: auto;
+    max-width: 1400px;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#picture{
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    padding-right: 50px;
+    border-right: 5px solid dark;
+};
+
+#description{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 40px;
+    display: block;
+    float: right;
+    width: auto;
+    max-width: 400px;
+    max-height: 454px;
+    padding: 5px;
+    margin: 15px;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+    margin-top: 0px;
+    font-size: 50px;
+    height: 410px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    line-height: 350px; 
+}

@@ -1,0 +1,7 @@
+description.html
+
+---->
+
+ex: description.html?numero=293660
+
+il faut rajouter la variable numero qui contient l'identifiant du film

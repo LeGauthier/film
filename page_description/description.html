@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<title>Description film</title>
+    <script src="js/jquery.js"></script>
+</head>
+    
+<script>
+    function $_GET(param) {
+        var vars = {};
+            window.location.href.replace( location.hash, '' ).replace( 
+		  /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		  function( m, key, value ) { // callback
+              vars[key] = value !== undefined ? value : '';
+		  }
+        );
+
+	   if ( param ) {
+		  return vars[param] ? vars[param] : null;	
+	   }
+	   return vars;
+    }
+    
+    function actualiser_infos_film(tit, dur, cat, ann, res, img, bac){
+        document.getElementById('titre').innerHTML = '<b>Titre :</b> '+tit;
+        document.getElementById('duree').innerHTML = '<b>Durée :</b> '+dur+' minutes';
+        document.getElementById('categorie').innerHTML = '<b>Catégorie :</b> '+cat;
+        document.getElementById('annee').innerHTML = '<b>Année :</b> '+ann;
+        document.getElementById('resume').innerHTML = '<b>Description :</b> '+res;
+        document.getElementById('image').src= 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+img;
+        document.getElementById('background').style= 'background: url(\'https://image.tmdb.org/t/p/w1400_and_h450_bestv2'+bac+'';
+    }
+    
+    function test(){
+     
+        $.ajax({
+            url: 'https://api.themoviedb.org/3/movie/'+$_GET('numero')+'?api_key=97a2e978f1f12c6b8aeab97c7ff55c69',
+     
+            success: function(res) {
+                var bac = res.backdrop_path;
+                var tit = res.original_title;
+                var dur = res.runtime;
+                var cat = res.genres[0].name;
+                var img = res.poster_path;
+                var ann = res.release_date;
+                var res = res.overview;
+                actualiser_infos_film(tit, dur, cat, ann, res, img, bac);      
+            },
+            error: function(res) {
+                alert('problems');
+                console.log(res);
+            }
+        }); 
+    }
+</script>
+    
+<body onload="test();">
+    <h1  id="background" style="">Ma Cinémathèque</h1>
+    <div id="principale">
+        <div id="picture"><img id="image" src=""></div>
+        <div id="description">
+            <p id='titre'></p>
+            <p id='duree'></p>
+            <p id='categorie'></p>
+            <p id='annee'></p>
+            <p id='resume'></p>
+        </div>
+    </div>
+</body>
+</html>
