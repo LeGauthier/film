@@ -21,7 +21,7 @@ h1{
 }
 
 i{
-	 display: none;
+	 display: none!important;
 }
 
 .nav-side-menu {
@@ -159,7 +159,7 @@ i{
     line-height: 50px !important;
   }
     #barre{
-	  display:block;
+	  display:block!important;
   }
 }
 @media (min-width: 767px) {
