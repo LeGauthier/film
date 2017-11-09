@@ -4,10 +4,11 @@ h1{
 }
 
 #carousel {
+    display: block;
     margin: auto;
     width:960px;
     border:1px solid #ffffff;
-    height:300px;
+    height:300px!important;
     width: 100%;
     position:relative;
     clear:both;
