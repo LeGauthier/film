@@ -50,7 +50,8 @@ function test(){
 function affichage_resultat(tab_resultat)
 {
 	var size = tab_resultat.length;
-	alert(tab_resultat);
+	alert(size);
+	alert(tab_resultat[0]);
 	table = '';
 	for (i=0; i < size; i++){
 		table += '<tr><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview+'</td></tr>'
