@@ -20,7 +20,7 @@
 /*
 test à appeler à chaque actualisation de la page + a chaque recherhce
 */
-function test(){
+function recherche(){
 	title = document.getElementById('nomfilm').value;
 
 	if (title) {
@@ -29,32 +29,38 @@ function test(){
 		title = getParameterByName('nomfilm');
 	}
 	
-	alert(title);
-	
-	//recherche par titre
-	$.ajax({
-		url: 'https://api.themoviedb.org/3/search/movie?api_key=f774f8141b6f19c0d40cca605a071a08&query='+title,
-		success: function(res) {
-			alert(res.results[0].original_title);
-			affichage_resultat(res.results);
-			console.log(res);
-		},
-		error: function(res) {
-			alert('problems');
-			console.log(res);
-		}
-	});
+	if (title) {
+		//recherche par titre
+		$.ajax({
+			url: 'https://api.themoviedb.org/3/search/movie?api_key=f774f8141b6f19c0d40cca605a071a08&query='+title,
+			success: function(res) {
+				affichage_resultat(res.results);
+				console.log(res);
+			},
+			error: function(res) {
+				alert('problems');
+				console.log(res);
+			}
+		});
+	}
 }
 
 // faire le lien vers les pages
 function affichage_resultat(tab_resultat)
 {
 	var size = tab_resultat.length;
-	alert(size);
-	alert(tab_resultat[0]);
+
 	table = '';
 	for (i=0; i < size; i++){
-		table += '<tr scope="row"><td><a href="page_description/description.html?numero='+tab_resultat[i].id+'">'+tab_resultat[i].original_title+'</a></td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+tab_resultat[i].overview.substring(0, 150)+'[...]</td></tr>';
+		description = tab_resultat[i].overview;
+		if (description.length > 150) {
+			description = description.substring(0, 150) + ' [...]';
+		}
+
+
+		//table += '<tr scope="row" onclick="document.location="page_description/description.html?numero='+tab_resultat[i].id+'"><td><a href="page_description/description.html?numero='+tab_resultat[i].id+'">'+tab_resultat[i].original_title+'</a></td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+description+'</td></tr>';
+		table += '<tr scope="row" onclick="document.location=\'page_description/description.html?numero='+tab_resultat[i].id+'\'"><td>'+tab_resultat[i].original_title+'</td><td>'+tab_resultat[i].genre_ids[0]+'</td><td>'+tab_resultat[i].release_date+'</td><td>'+description+'</td></tr>';
+
 	}
 	document.getElementById('tbody').innerHTML = table;
 }
@@ -70,7 +76,7 @@ function getParameterByName(name, url) {
 	return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-
+window.onload = recherche;
 </script>
 
 <h1>Ma Cinémathèque</h1>
@@ -97,7 +103,7 @@ function getParameterByName(name, url) {
 			</div>
 
 			<div class="col-auto search-item">
-				<button type="button" onclick="test()" class="btn btn-dark">Valider</button>
+				<button type="button" onclick="recherche()" class="btn btn-dark">Valider</button>
 			</div>
 		</div>
 	</form>
