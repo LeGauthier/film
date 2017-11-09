@@ -73,5 +73,9 @@ body {
 		display: block;
 		width: 100%;
 	}
+
+	body {
+		font-size: 1.9em;
+	}
 	
 }
