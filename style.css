@@ -30,8 +30,8 @@ h1 {
 
 .form-row select:focus, .form-row input:focus{
 	border-color : black;
-	box-shadow: 0 0 0 .2rem rgba(0, 75, 200, .35);
-
+	box-shadow: 0 0 0 .2rem rgba(76, 175, 80, .35);
+4C AF 50
 }
 
 #result table{
